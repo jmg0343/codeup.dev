@@ -1,0 +1,68 @@
+body {
+	background-image: url(/img/better-welcome-page.jpg);
+	background-position: bottom;
+}
+
+element.style {
+}
+@media (min-width: 768px)
+.navbar-custom {
+    padding: 20px 0;
+    border-bottom: none;
+    letter-spacing: 1px;
+    background: 0 0;
+    -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    transition: background .5s ease-in-out,padding .5s ease-in-out;
+}
+
+element.style {
+}
+@media (min-width: 768px)
+.navbar-custom.top-nav-collapse {
+    padding: 0;
+    background: #000;
+    border-bottom: 1px solid rgba(255,255,255,.3);
+}
+
+.navbar-custom {
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(255,255,255,.3);
+}
+.btn, .navbar-custom, h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.navbar-custom, body {
+    background-color: #000;
+}
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+}
+@media (min-width: 768px)
+.navbar-fixed-bottom, .navbar-fixed-top {
+    border-radius: 0;
+}
+
+.navbar-fixed-bottom, .navbar-fixed-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+@media (min-width: 768px)
+.navbar {
+    border-radius: 4px;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}

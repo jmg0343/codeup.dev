@@ -1,0 +1,46 @@
+.box {
+	color: white;
+	border: 1px solid black;
+	width: 50px;
+	height: 50px;
+	padding: 10px;
+	margin: 25px;
+	float: left;
+}
+
+div:nth-child(2n+0) {
+	float: left;
+	clear: left;
+}
+
+.arrow {
+	position: relative;
+	bottom: 84px;
+	left: 42px;
+}
+
+#box-red {
+	background-color: red;
+}
+
+#box-orange {
+	background-color: orange;
+}
+
+#box-yellow {
+	background-color: yellow;
+}
+
+#box-green {
+	background-color: green;
+	/*clear: left;           TO BE USED       */
+	/*float: left;        WITHOUT NTH-CHILD   */
+}
+
+#box-blue {
+	background-color: blue;
+}
+
+#box-violet {
+	background-color: violet;
+}

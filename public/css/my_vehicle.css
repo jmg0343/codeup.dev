@@ -1,0 +1,87 @@
+body {
+	background-image: url(/img/dopest_background.jpg);
+	background-color: black;
+	background-attachment: fixed;
+	background-position: center;
+	font-family: "Black Ops One", cursive;
+	font-size: large;
+	text-align: center;
+	color: #9F1600;
+	margin-left: 350px;
+}
+
+h1, h2 {
+	color: black;
+	text-decoration: underline;
+}
+
+#navigation li {
+	display: inline;
+}
+
+ol {
+	list-style: decimal-leading-zero;
+	list-style-position: inside;
+	width:250px;
+	margin:0 auto;
+	text-align:left;
+}
+
+ul {
+	list-style: square;
+	list-style-position: inside;
+	width:250px;
+	margin:0 auto;
+	text-align:left;
+}
+
+li span {
+	color: #9F1600;
+}
+
+li {
+	color: black;
+}
+
+table, th, td {
+   border: 1px solid #aea88e;
+   background-color: black;
+   color: #aea88e;
+}
+
+th, td {
+	padding: 15px;
+	font-size: 25px;
+}
+th {
+	font-weight: bold;
+}
+
+a:link {
+	color: blue;
+}
+
+a:visited {
+	color: #9F1600;
+}
+
+a:hover {
+	color: red;
+}
+
+a:active {
+	color: green;
+}
+
+#conversion_table {
+	text-align: center;
+	margin: auto;
+}
+
+#truck_pic {
+	border-radius: 8em;
+}
+
+#vehicle {
+	margin-left: 100px;
+}
