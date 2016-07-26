@@ -1,0 +1,42 @@
+body {
+    background-image: url(/img/better-welcome-page.jpg);
+    font-family: "IM Fell DW Pica", serif;
+}
+
+#topnav {
+    width: 100%;
+    background-color: #000;
+    position: relative;
+    height: 50px;
+    top: 0px;
+    left: 0px;
+    padding: 0px 0px 5px 0px;
+    margin: 0px;
+
+}
+
+.nav-link:hover {
+    -webkit-transition:All .5s ease;
+    -moz-transition:All .5s ease;
+    -o-transition:All .5s ease;
+    -webkit-transform: rotate(-10deg) scale(1.2);
+    -moz-transform: rotate(-10deg) scale(1.2);
+    -o-transform: rotate(-10deg) scale(1.2);
+}
+
+.nav-link {
+    color: white;
+    list-style-type: none;
+    font-size: 200%;
+    padding-left: 20px;
+    font-family: 'IM Fell DW Pica', serif;
+    display:inline;
+}
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: #a0a0a0;
+}

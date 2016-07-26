@@ -1,0 +1,44 @@
+h1 {
+
+}
+/* classes used for characteristics shared among every box */
+/* id's used for characteristics unique to box */
+.box {
+    border: 1px solid black; /* Each colored box has a 1 pixel border that must be accounted for in overall size */
+    width: 150px; /* content is 150 pixels wide */
+    height: 50px; /* content is 50 pixels high */
+    padding: 10px; /* subtract sum of content height/width and border from overall size to find padding  */
+    font-weight: bold; /* text within boxes is bold */
+    color: #FFF; /* text within boxes is white */
+    margin-bottom: 10px; /* 10 pixels of space between boxes */
+}
+
+#box-red {
+    background-color: red; /* top-most box needs no adjustment beyond color */
+}
+
+#box-orange {
+    background-color: orange; 
+    margin-left: 30px; /* Orange box indented by 30 pixels. Each subsequent box will be indented by 30 more. */
+}
+
+#box-yellow {
+    background-color: yellow; 
+    margin-left: 60px; 
+}
+
+#box-green{
+    background-color: green;
+    margin-left: 90px;
+}
+
+#box-blue{
+    background-color: blue;
+    margin-left: 120px;
+}
+
+#box-violet{
+    background-color: violet;
+    margin-left: 150px;
+}
+    
