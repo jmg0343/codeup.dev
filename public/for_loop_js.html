@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>while Loop</title>
+	</head>
+	<body>
+	    <script type="text/javascript">
+	  
+	  // Exercise 1
+	    for (var i = 1; i <= 10; i++) {
+	    	if (i != 10) {
+	    		stringNum = i.toString();
+	    	} else {
+	    		stringNum = "0";
+	    	} 
+	    	console.log(stringNum.repeat(i));
+	    }
+
+
+	   // Exercise 2
+
+
+	  var n = 8;
+	   for (var i = 1; i <= 10; i++) {
+	  		console.log(n + "x" + i + "=" + (n * i));
+	   }  
+
+	   console.log("\n\nExercise 3\n\n");
+
+	   // Exercise 3
+		
+	   for (var i = 1; i <= 10; i++) {
+	   		var randomNumber = Math.floor(Math.random() * 180) + 20;
+	   		if (randomNumber % 2 == 1) {
+	   			console.log(randomNumber + " is odd");
+	   		} else {
+	   			console.log(randomNumber + " is even");
+	   		}
+	   }
+
+	   console.log("\n\nExercise 4\n\n");
+	  
+	   // Exercise 4
+
+	   for (var i = 100; i >= 5; i -= 5) {
+	   		console.log(i);
+	   }
+			
+
+
+	    </script>
+	</body>
+</html>
+
+
