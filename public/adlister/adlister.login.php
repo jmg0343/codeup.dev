@@ -68,7 +68,7 @@
 
     <!-- Page Content -->
     <div align="center" class="login">
-    	<form method="POST" action="/adlister.login.php">
+    	<form method="POST" action="/adlister/adlister.login.php">
     		<p>
     			<label for="username">Username</label>
     			<input id="username" name="username" type="text">

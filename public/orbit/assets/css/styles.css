@@ -19,7 +19,7 @@ body {
 }
 
 header {
-  font-size: 20px;
+  font-size: 18px;
   padding: 0;
   margin-bottom: 50px;
 }
@@ -243,14 +243,39 @@ p {
   margin-top: 0;
   margin-bottom: 12px;
 }
+
+/*THhis colors the inner level bar*/
 .skillset .level-bar {
   height: 12px;
   background: #f5f5f5;
 }
+
+
+/*This colors the skillsets */
 .skillset .level-bar-inner {
   height: 12px;
   background: #7bc2d3;
 }
+/*This colors the skillsets*/
+
+.python {
+  height: 12px;
+  background: #7bc2d3;
+  width: 150px;
+}
+
+.javascript_jquery {
+  height: 12px;
+  background: #7bc2d3;
+  width: 200px;
+}
+
+.html_css {
+  height: 12px;
+  background: #7bc2d3;
+  width: 300px;
+}
+
 .footer {
   padding: 30px;
   padding-top: 60px;

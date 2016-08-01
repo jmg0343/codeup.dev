@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	</head>
+	<body>
+		<script type="text/javascript">
+		"use strict";
+
+		function isNumeric (algorithm) {
+			if (algorithm != NaN) {
+				return algorithm;
+			} else if (algorithm === NaN) {
+				return "Inputs must be numeric";
+			}
+		}
+
+
+
+
+
+		function sum (number1, number2) {
+			var sum = number1 + number2;
+			return isNumeric(sum);
+			// return sum;
+		}
+		function difference (number1, number2) {
+			var difference = number1 - number2;
+			return difference;
+		}
+		function multiply (number1, number2) {
+			var multiply = number1 * number2;
+			return multiply;
+		}
+		function divide (number1, number2) {
+			var divide = number1 / number2;
+			return divide;
+		}
+		function square (number) {
+
+
+			// var square = multiply(number, number);
+			//return square;
+			return multiply(number, number);
+		}
+		function sumOfSquares (number1, number2) {
+			var firstSquare = square(number1);
+			var secondSquare = square(number2);
+			return sum(firstSquare, secondSquare);
+		}
+
+
+		</script>
+	</body>
+</html>

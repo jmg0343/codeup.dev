@@ -30,9 +30,9 @@ if (average > 80) {
 
 //Exercise 2 --------------------------------------------------------------------------------------
 
-function salesInfo(name, amountSpent) {
+function salesInfo(name, amountSpent, discount) {
 	var customerName = name + " spent: $";
-	var total = (amountSpent > 200) ? amountSpent - (amountSpent * .35) : amountSpent;
+	var total = (amountSpent > 200) ? amountSpent - (amountSpent * discount) : amountSpent;
 	var discountMessage = (amountSpent > 200) ? ". Discount was applied. Final payment: $" + total : " No discount applied. Final payment: $" + total;
 	return customerName + amountSpent + discountMessage;
 }
@@ -106,7 +106,6 @@ var flipACoin = Math.floor(Math.random()* 2);
 	}
 
  
-// flipACoin = (flipACoin === 1) ? "Buy a house" : "Buy a car";
 
 
 

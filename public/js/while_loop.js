@@ -1,14 +1,6 @@
 "use strict";
 
 var allCones = Math.floor(Math.random() * 50) + 50;
-// var cones = Math.floor(Math.random() * 5) + 1;
-// var conesLeft = (allCones - cones);
-
-
-
-
-//ALMOST WORKS. ELSE STATEMENT DOES NOT INITIALIZE
-
 
 console.log("I have " + allCones + " to sell.");
 do {
@@ -20,5 +12,7 @@ do {
 	else if (allCones < cones) {
 		console.log("I cannot sell you " + cones + " cones.");
 	} 
-	} while (allCones > 0);
+} while (allCones > 0);
 	console.log("Finally sold them all!");
+
+
