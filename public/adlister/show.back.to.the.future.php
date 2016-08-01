@@ -78,8 +78,8 @@
 
         <!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">
-            <h1>Darth Vader Helmet</h1>
-            <p>Life size Darth Vader helmet replica.</p>
+            <h1>The DeLorean</h1>
+            <p>Replica of the original DeLorean used in the famous 1985 film</p>
         </header>
 
         <hr>
@@ -88,9 +88,9 @@
 
             <div align="center">
                 <div class="thumbnail">
-                    <img id="vader" src="/adlister/img/vader.jpg" alt="vader">
+                    <img id="vader" src="/adlister/img/backto.jpg" alt="btf">
                     <div class="caption">
-                        <h3>$1,000</h3>
+                        <h3>$90,000</h3>
                         <p>Posted by (user) </p>
                         <p>
                             <a href="#" class="btn btn-primary">Buy Now!</a>

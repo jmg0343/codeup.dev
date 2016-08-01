@@ -78,8 +78,8 @@
 
         <!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">
-            <h1>Darth Vader Helmet</h1>
-            <p>Life size Darth Vader helmet replica.</p>
+            <h1>Superman Costume</h1>
+            <p>Replica of the original Superman Costume</p>
         </header>
 
         <hr>
@@ -88,9 +88,9 @@
 
             <div align="center">
                 <div class="thumbnail">
-                    <img id="vader" src="/adlister/img/vader.jpg" alt="vader">
+                    <img id="vader" src="/adlister/img/superman.jpg" alt="superman">
                     <div class="caption">
-                        <h3>$1,000</h3>
+                        <h3>$2,000</h3>
                         <p>Posted by (user) </p>
                         <p>
                             <a href="#" class="btn btn-primary">Buy Now!</a>
