@@ -7,34 +7,63 @@
 		<script type="text/javascript">
 		"use strict";
 
-		function isNumeric (input) {
-			if (typeof input === "number") {
-				return input;
-			} else {
-				return "Inputs must be numeric.";
-			} 
+
+		var math = prompt("which of the following math functions would you like to perfom?\nadd\nsubtract\ndivide\nmultiply");
+
+		switch (math) {
+			case "add":
+				var number1 = parseInt(prompt("please enter the first number you would like to add"));
+				var number2 = parseInt(prompt("please enter the second number you would like to add"));
+				var sum = number1 + number2;
+				alert("The sum of your two numbers is: " + sum);
+				break;
+			case "subtract":
+				var number1 = parseInt(prompt("please enter the first number"));
+				var number2 = parseInt(prompt("please enter the number you would like to subtract from the first"));
+				var difference = number1 - number2;
+				alert("The difference between your two numbers is: " + difference);
+				break;
+			case "divide":
+				var number1 = parseInt(prompt("please enter the first number"));
+				var number2 = parseInt(prompt("please enter the number you would like your first number to by divided by"));
+				var quotient = number1 / number2;
+				alert("The quotient of your two numbers is: " + quotient);
+				break;
+			case "multiply":
+				var number1 = parseInt(prompt("please enter the first number you would like to multiply"));
+				var number2 = parseInt(prompt("please enter the second number you would like to multiply"));
+				var product = number1 * number2;
+				alert("The product of your two numbers is: " + product);
+				break;
 		}
+
+		// function isNumeric (input) {
+		// 	if (typeof input === "number") {
+		// 		return input;
+		// 	} else {
+		// 		return "Inputs must be numeric.";
+		// 	} 
+		// }
 
 
 
 
 
 		function sum (number1, number2) {
-			return isNumeric(sum);
 			var sum = number1 + number2;
 			return sum;
 		}
 		function difference (number1, number2) {
 			var difference = number1 - number2;
-			return isNumeric(difference);
+			return difference;
 		}
 		function multiply (number1, number2) {
 			var multiply = number1 * number2;
-			return isNumeric(multiply);
+			return multiply;
 		}
 		function divide (number1, number2) {
 			var divide = number1 / number2;
-			return isNumeric(divide);
+			return divide;
 		}
 		function square (number) {
 			// var square = multiply(number, number);
