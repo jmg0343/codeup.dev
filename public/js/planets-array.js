@@ -48,17 +48,23 @@
 
     console.log('Using splice to remove the planet after "Earth".');
     // TODO: Read the console.log() statement above. Write code to perform the step it describes.
-    logPlanets();
+    logPlanets(planets.splice(3, 1));
+
+    console.log("\n")
 
     console.log('Using splice to add back the planet after "Earth".');
     // TODO: Read the console.log() statement above. Write code to perform the step it describes.
-    logPlanets();
+    logPlanets(planets.splice(3, 0, "Mars"));
+
+    console.log("\n");
 
     console.log("Reversing the order of the planets array.");
     // TODO: Read the console.log() statement above. Write code to perform the step it describes.
-    logPlanets();
+    logPlanets(planets.reverse());
+
+    console.log("\n");
 
     console.log("Sorting the planets array.");
     // TODO: Read the console.log() statement above. Write code to perform the step it describes.
-    logPlanets();
+    logPlanets(planets.sort());
 })();
