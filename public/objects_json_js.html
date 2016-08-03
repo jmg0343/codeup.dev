@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	</head>
+	<body>
+		<script type="text/javascript">
+		'use strict';
+		// todo:
+		// Create an array of objects that represent books.
+		// Each book should have a title and an author.
+		// The book author should be an object with a firstName and lastName.
+		// Be creative and add at least 5 books to the array
+		// var books = [todo];
+		var books = [			//created array to store list of books
+				{	
+					"title": "To Kill A Mockingbird",		// title of first book
+					"author": 								// author property
+					{
+						"firstName": "Joey",				// first name of author
+						"lastName": "Garcia"				// last name of author
+					}
+				},
+				{
+					"title": "Of Mice and Men",
+					"author":
+					{
+						"firstName": "Joey",
+						"lastName": "Garcia",
+					}
+				},
+				{
+					"title": "The Old Man and The Sea",
+					"author": 
+					{
+						"firstName": "Jose",
+						"lastName": "Garcia"
+					}
+				},
+				{
+					"title": "The Great Gatsby",
+					"author":
+					{
+						"firstName": "Joseph",
+						"lastName": "Garcia"
+					}
+				},
+				{
+					"title": "The Autobiography of the Dopest Playa That Ever Existed",
+					"author":
+					{
+						"firstName": "Joey",
+						"lastName": "Garcia"
+					}
+				}
+
+			];
+	
+		// log out the books array
+		console.log(books);
+
+		// todo:
+		// Loop through the array of books using .forEach and print out the specified information about each one.
+		// start loop here
+		books.forEach(function(element, index, array){				// .forEach function that loops through array and prints desired elements
+		    console.log("Book #" + (index + 1));					// index + 1 in () so as to prevent concatination with "book" string
+		    console.log("Title: " + books[index].title);			// books[index] points to the index within book variable.   .title calls for the title property
+		    console.log("Author: " + books[index].author.firstName + " " + books[index].author.lastName);		//books[index].author.firstName calls the firstName property
+		    console.log("---");
+		});
+		// end loop here
+
+
+
+		</script>
+	</body>
+</html>
