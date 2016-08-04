@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Defuse the BOM</title>
+</head>
+<body>
+
+<h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
+<button id="defuser">Defuse the BOM</button>
+
+<script>
+(function() {
+    "use strict";
+
+    var detonationTimer = 5;            // Initiates timer variable at 5. Starting point to count down from
+    var interval = 1000;                // Sets interval at 1000 milliseconds(1 second). 
+
+    // TODO: This function needs to be called once every second
+    var detonate = setInterval(function () {         // created a variable used to wrap an if-else statement inside a setInterval function
+        if (detonationTimer === 0) {                // if counter reaches 0, then "exterminate" alert is initiated
+            alert('EXTERMINATE!');                  
+            document.body.innerHTML = '';           
+        } else if (detonationTimer > 0) {           // loop will continue to count down until it reaches 0 (parameter set in the if statement above)
+            document.getElementById('timer').innerHTML = detonationTimer;
+        }
+
+        detonationTimer--;          // decrements timer by 1
+    }, interval);                   // interval is called to ensure the setInterval function is initiated every second
+
+    // TODO: When this function runs, it needs to
+    // cancel the interval/timeout for updateTimer()
+    function defuseTheBOM() {                            // function created that allows defuse button to stop the timer
+
+        var defuse = clearInterval(detonate);           // clearInterval method created to stop the setInterval function. this kills the detonate function
+        alert("Bom was defused");                       // alert created that will tell the user they have defused the bomb
+
+    }
+
+    // Don't modify anything below this line!
+    //
+    // This causes the defuseTheBOM() function to be called
+    // when the "defuser" button is clicked.
+    // We will learn about events in the DOM lessons
+    var defuser = document.getElementById('defuser');
+    defuser.addEventListener('click', defuseTheBOM);
+})();
+</script>
+</body>
+</html>
