@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM: Query and Modify</title>
+</head>
+<body>
+
+<h1 id="main-header">Hello World!</h1>
+<button id="main-header-button">Click To Change</button>
+<ul>
+    <li data-dbid="1">Item 1</li>
+    <li data-dbid="2">Item 2</li>
+    <li data-dbid="3">Item 3</li>
+    <li data-dbid="4">Item 4</li>
+    <li data-dbid="5">Item 5</li>
+</ul>
+<button id="list">Click To Change</button>
+<h2 id="sub-header">Hello Again.</h2>
+<button id="sub-header-button">Click To Change</button>
+<p class="sub-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+    aliquip ex ea commodo consequat. Duis aute irure dolor in
+    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+    culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<button id="sub-paragraph-button">Click To Change</button>
+
+<script>
+    (function() {
+        "use strict";
+
+        // TODO: Uncomment next line and get the main header element by id
+        var mainHeader = document.getElementById("main-header");            // points to mainHeader id
+        var headerButton = document.getElementById("main-header-button");   // points to button that will initiate change
+        var changeMainHeader = function (event) {                           // created a function that initiates event and assigned it to variable changeMainHeader  
+        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+        mainHeader.innerHTML = "JavaScript is Cool";                        // changes the header to "JavaScript is Cool" when function is called
+        }
+        headerButton.addEventListener("mousedown", changeMainHeader);       // added event listener to button, initiating changeMainHeader function when clicked(mousedown) 
+                                                                            // when mousedown is initiated, new header(changeMainHeader) will appear
+
+
+        // TODO: Uncomment the next line and get the sub header element by id
+        var subHeader = document.getElementById("sub-header");              
+        var subHeaderButton = document.getElementById("sub-header-button");
+        var changeSubHeader = function (event) {                            
+        // TODO: Set the text color of subHeader to blue
+        subHeader.style.color = "blue";    
+        }
+        subHeaderButton.addEventListener("mousedown", changeSubHeader);
+
+
+
+
+        // TODO: Uncomment the next line and get all list items
+        // TODO: Set text color on every other list item to grey
+        var listItems = document.getElementsByTagName("li");
+        var changeListButton = document.getElementById("list");
+        var changeFirstListItem = listItems[0];
+        var changeItemOne = function(event) {
+            listItems[0].style.color = "blue";
+        }
+        
+        var changeList = function (event) {         
+            for (var i = 1; i < listItems.length; i += 2) {
+                listItems[i].style.color = "grey";
+            }
+        }    
+        changeListButton.addEventListener("mousedown", changeList);
+        // TODO: Set text color of li with dbid = 1 to blue
+        changeListButton.addEventListener("mousedown", changeItemOne);
+       
+
+        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+        var subParagraphs = document.getElementsByClassName("sub-paragraph");
+        var subParagraphButton = document.getElementById("sub-paragraph-button");
+        var changeSubParagraph = function (event) {
+        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        subParagraphs[0].innerText = "Mission Accomplished";                        // ***** document.getElementsByClassName returns as an array *****     
+        }
+        subParagraphButton.addEventListener("mousedown", changeSubParagraph);       // subParagraphs[0] specifies where in the array our changes will be made
+    })();                                                                           // without [], our message will only print to console
+    
+</script>
+</body>
+</html>
+
+
+
+
