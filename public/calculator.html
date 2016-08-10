@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Super Dope Abacus</title>
+        <style type="text/css">
+
+            #calculatorContainer {
+                margin-top: 100px;
+            }
+
+            #tableForButtons {
+                margin-top: 0px;
+                padding: 15px;
+                border: 1px solid black;
+                background-color: grey;
+            }
+
+            #outputDisplay {
+                margin-bottom: 20px;
+            }
+
+
+            td {
+                margin-top: 0px;
+                padding: 15px;
+                border: 1px solid black;
+            }
+
+            th {
+                padding: 15px;
+                margin-top: 50px;
+                border: 1px solid black;
+                height: 0px;
+            }
+            
+            #rightOperand, #leftOperand {
+                width: 35px;
+                border: 1px solid black;
+            }
+
+            .calcButton {
+                background-color: black;
+                color: #6ef70c;
+            }
+
+            #clear {
+                background-color: black;
+                color: red;
+                font-weight: bold;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div align = "center" id="calculatorContainer">      
+            <!-- create 4x4 table  -->
+            <table id="outputDisplay">
+                <tr>
+                    <th id="leftOperand"></th>
+                    <th id="operator"></th>
+                    <th id="rightOperand"></th>
+                </tr>
+            </table>
+            <table id="tableForButtons"> 
+                <tr>
+                    <td class="calcButton">1</td>
+                    <td class="calcButton">2</td>
+                    <td class="calcButton">3</td>
+                    <td id="plus" class="calcButton operatorButton">+</td>
+                </tr>
+                <tr>
+                    <td class="calcButton">4</td>
+                    <td class="calcButton">5</td>
+                    <td class="calcButton">6</td>
+                    <td class="calcButton operatorButton">-</td>
+                </tr>
+                <tr>
+                    <td class="calcButton">7</td>
+                    <td class="calcButton">8</td>
+                    <td class="calcButton">9</td>
+                    <td class="calcButton operatorButton">*</td>
+                </tr>
+                <tr>
+                    <td class="calcButton" id="clear">C</td>
+                    <td class="calcButton">0</td>
+                    <td class="calcButton" id="equals">=</td>
+                    <td class="calcButton operatorButton">/</td>
+                </tr>
+            </table>
+        </div>
+        <script type="text/javascript" src="/js/calculator.js"></script>
+    </body>
+</html>
