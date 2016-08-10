@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Super Advanced Abacus</title>
+        <style type="text/css">
+
+            #calculatorContainer {
+                margin-top: 100px;
+            }
+
+
+            #outputDisplay {
+                margin-bottom: 20px;
+            }
+
+            th {
+                padding: 15px;
+                margin-top: 50px;
+                /*border: 1px solid black;*/
+                height: 0px;
+            }
+            
+            #rightOperand, #leftOperand {
+                width: 52px;
+                /*border: 1px solid black;*/
+            }
+
+            #numbersContainer {
+                  width: 200px ;
+                  margin: auto;
+            }
+
+            .calButton {
+                float: left;
+                width: 50px;
+                height: 50px;
+                padding: 10px;
+                border: 1px solid black;
+                font-size: large;
+                
+            }
+
+            #clear {
+                width: 200px;
+                background-color: orange;
+                color: white;
+                font-weight: bold;
+            }
+
+            .operatorButton {
+                background-color: orange;
+                color: white;
+            }
+
+            button:nth-child(4n+1) {
+                float: left;
+                clear: left;
+            }
+
+            
+
+        </style>
+    </head>
+    <body>
+        <div align = "center" id="calculatorContainer">      
+            
+            <table id="outputDisplay">
+                <tr>
+                    <th id="leftOperand"></th>
+                    <th id="operator"></th>
+                    <th id="rightOperand"></th>
+                </tr>
+            </table>
+            
+            <div id="numbersContainer">
+                <button class="calButton">1</button>
+                <button class="calButton">2</button>
+                <button class="calButton">3</button>
+                <button class="calButton operatorButton">+</button>
+                <button class="calButton">4</button>
+                <button class="calButton">5</button>
+                <button class="calButton">6</button>
+                <button class="calButton operatorButton">-</button>
+                <button class="calButton">7</button>
+                <button class="calButton">8</button>
+                <button class="calButton">9</button>
+                <button class="calButton operatorButton">*</button>
+                <button class="calButton" id="decimal">.</button>
+                <button class="calButton">0</button>
+                <button class="calButton" id="equals">=</button>
+                <button class="calButton operatorButton">/</button>
+                <button class="calButton" id="clear">C</button>
+            </div>
+
+
+
+
+       <!--      <table id="tableForButtons"> 
+                <tr>
+                    <td class="calcButton">1</td>
+                    <td class="calcButton">2</td>
+                    <td class="calcButton">3</td>
+                    <td id="plus" class="calcButton operatorButton">+</td>
+                </tr>
+                <tr>
+                    <td class="calcButton">4</td>
+                    <td class="calcButton">5</td>
+                    <td class="calcButton">6</td>
+                    <td class="calcButton operatorButton">-</td>
+                </tr>
+                <tr>
+                    <td class="calcButton">7</td>
+                    <td class="calcButton">8</td>
+                    <td class="calcButton">9</td>
+                    <td class="calcButton operatorButton">*</td>
+                </tr>
+                <tr>
+                    <td class="calcButton" id="clear">C</td>
+                    <td class="calcButton">0</td>
+                    <td class="calcButton" id="equals">=</td>
+                    <td class="calcButton operatorButton">/</td>
+                </tr>
+            </table> -->
+        </div>
+        <script type="text/javascript" src="/js/calculatorWithDecimal.js"></script>
+    </body>
+</html>

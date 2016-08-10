@@ -60,19 +60,18 @@
         // TODO: Set text color on every other list item to grey
         var listItems = document.getElementsByTagName("li");
         var changeListButton = document.getElementById("list");
-        var changeFirstListItem = listItems[0];
-        var changeItemOne = function(event) {
-            listItems[0].style.color = "blue";
+        var changeItemOne = function(event) {                   // function created to change color of the first item in list to blue
+            listItems[0].style.color = "blue";           
         }
-        
-        var changeList = function (event) {         
+                
+        var changeList = function (event) {                     // Second function created to change color of every other item in list to grey    
             for (var i = 1; i < listItems.length; i += 2) {
                 listItems[i].style.color = "grey";
             }
         }    
-        changeListButton.addEventListener("mousedown", changeList);
+        changeListButton.addEventListener("mousedown", changeList);     // First event listener created to change every other list item grey
         // TODO: Set text color of li with dbid = 1 to blue
-        changeListButton.addEventListener("mousedown", changeItemOne);
+        changeListButton.addEventListener("mousedown", changeItemOne);  // Second event listener created to change first item in list to blue
        
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
@@ -84,7 +83,7 @@
         }
         subParagraphButton.addEventListener("mousedown", changeSubParagraph);       // subParagraphs[0] specifies where in the array our changes will be made
     })();                                                                           // without [], our message will only print to console
-    
+
 </script>
 </body>
 </html>
