@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>National Parks</title>
+		<style type="text/css">
+			.invisible {
+				display: none;
+
+			}
+			dd {
+				color: #5d3fd3;
+			}
+			#answers {
+				color: blue;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>FAQs About the National Park of American Somoa</h1>
+		<dl>
+			<dt>Why aren't there better trails?</dt>
+			<dd>The entire park has steep terrain, unstable volcanic soils, in a heavy tropical rainfall climate. It is very hard to build and maintain trails in this environment. </dd>
+			<dt>If I get lost or injured while visiting this park, will I likely be rescued?</dt>
+			<dd>Currently, the park lacks a search and rescue capability. Also, note that the nearest United States Coast Guard vessel is in Honolulu, thousands of miles away. Therefore, don't push your limits: there may be no one to help you.</dd>
+			<dt>Instead of having a lease involving many villages' lands, why didn't the United States Government acquire the necessary park lands outright (as has been done in most other United States national parks)?</dt>
+			<dd>American Samoa retains many longstanding cultural traits relatively unchanged over time. Among them, Samoans retain their ways of communal ownership of land, an oral tradition of boundaries rather than written or surveyed, and a fierce protection of land and the status land provides a family.</dd>
+			<dt>Why does the United States have a national park in such a distant place as Samoa?</dt>
+			<dd>The United States "System" of National Parks has the outstanding places representing our Nation's finest natural, scenic, cultural and scientific heritage. </dd>
+			<dt>Is there a dress code?</dt>
+			<dd>Full tux, please</dd>
+			<dt>What government agency oversees the National Park Service?</dt>
+			<dd>The National Park Service is a bureau of the Department of the Interior. Directly overseeing its operation is the Department's Assistant Secretary for Fish, Wildlife and Parks.</dd>
+			<dt>Who is the director of the National Park Service?</dt>
+			<dd>Jonathan B. Jarvis</dd>
+			<dt>How old is the National Park System?</dt>
+			<dd>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916. Yellowstone National Park was established by an Act signed by President Ulysses S. Grant on March 1, 1872, as the nation's first national park. View the National Park System timeline.</dd>
+			<dt>What are concessions?</dt>
+			<dd>Concessionaires provide park visitors with lodging, transportation, food services, shops, and other services. More than 500 NPS concession contracts in more than 120 different park units) vary in size from small, family-owned businesses to national/international corporations.</dd>
+			<dt>Where can I find a park map?</dt>
+			<dd>You can view maps on specific park websites or download maps from the Harpers Ferry Center map collection.</dd>
+		</dl>
+
+		<label id="answers">Click for answers</label>
+
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function () {
+			$("dd").addClass("invisible");
+			$("#answers").click(function(){	
+				$("dd").toggleClass("invisible");
+			});
+			});
+
+		</script>
+	</body>
+</html>
+
+
