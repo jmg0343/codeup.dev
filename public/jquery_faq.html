@@ -41,8 +41,6 @@
 			<dd>You can view maps on specific park websites or download maps from the Harpers Ferry Center map collection.</dd>
 		</dl>
 
-		<label id="answers">Click for answers</label>
-
 		<h3>Yellowstone National Park</h3>
 
 			<ul>
@@ -70,20 +68,23 @@
 		<script type="text/javascript">
 
 		$(document).ready(function () {
+			
 			$("dd").addClass("invisible");
-			$("#answers").click(function(){	
-				$("dd").toggleClass("invisible");
+
+		// Update the code that uses the invisible class to hide and show dd elements to instead use the .toggle() method.
+			$("dt").click(function() {
+				$("dd").toggle("invisible");
 			});
 			
 			$("ul").each(function(){		// function created to traverse through each ul tag		
-				$(this).children().first().css("font-weight", "bold");		// "this" refers to specific ul tag that is being traversed
+				$(this).children().first().css("font-weight", "bold");		// "this" refers to specific ul tag that is being iterated at the time
  			});
 
-		// Create jQuery code that adds the invisible class on the parent ul of any li that is clicked.
+		// Update the li clicks adding invisible to the parent ul to instead use .hide().
 			$("li").click(function(){						
-				$(this).parent().addClass("invisible");
+				$(this).parent().hide();
 			})
-		
+
 
 		});
 
