@@ -71,19 +71,31 @@
 			
 			$("dd").addClass("invisible");
 
-		// Update the code that uses the invisible class to hide and show dd elements to instead use the .toggle() method.
+		// Update toggle code for dd elements to use fading effect.
 			$("dt").click(function() {
-				$("dd").toggle("invisible");
+				$("dd").fadeToggle("invisible");
 			});
 			
 			$("ul").each(function(){		// function created to traverse through each ul tag		
 				$(this).children().first().css("font-weight", "bold");		// "this" refers to specific ul tag that is being iterated at the time
  			});
 
-		// Update the li clicks adding invisible to the parent ul to instead use .hide().
-			$("li").click(function(){						
-				$(this).parent().hide();
+			$("h3").click(function(){
+				$(this).children().fadeToggle();
 			})
+
+			// $("h3").next().toggle();
+			$("h3").click(function(){
+				$(this).next().fadeToggle();
+			})
+
+
+
+
+		// Update the li clicks adding invisible to the parent ul to instead use .hide().
+			// $("li").click(function(){						
+			// 	$(this).parent().hide();
+			// })
 
 
 		});
