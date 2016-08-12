@@ -36,21 +36,57 @@
 			<dt>How old is the National Park System?</dt>
 			<dd>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916. Yellowstone National Park was established by an Act signed by President Ulysses S. Grant on March 1, 1872, as the nation's first national park. View the National Park System timeline.</dd>
 			<dt>What are concessions?</dt>
-			<dd>Concessionaires provide park visitors with lodging, transportation, food services, shops, and other services. More than 500 NPS concession contracts in more than 120 different park units) vary in size from small, family-owned businesses to national/international corporations.</dd>
+			<dd>Concessionaires provide park visitors with lodging, transportation, food services, shops, and other services. More than 500 NPS concession contracts in more than 120 different park units vary in size from small, family-owned businesses to national/international corporations.</dd>
 			<dt>Where can I find a park map?</dt>
 			<dd>You can view maps on specific park websites or download maps from the Harpers Ferry Center map collection.</dd>
 		</dl>
 
 		<label id="answers">Click for answers</label>
 
+		<h3>Yellowstone National Park</h3>
+
+			<ul>
+				<li>Yellowstone National Park was established on March 1, 1872</li>
+				<li>Yellowstone is the world’s first national park</li>
+				<li>There are over 40 major waterfalls in Yellowstone</li>
+				<li>Yellowstone produces 3.3 million acre-feet of water every year making it one of the riches sources for water in the western United States</li>
+			</ul>
+		<h3>Zion National Park</h3>
+			<ul>
+				<li>The park is named after the Hebrew word, “Zion.”  This word translates as “a place of peace and relaxation</li>
+				<li>The Olympic Torch passed through the park in 2002 while on its way to Salt Lake City</li>
+				<li>There are four life zones in the park including: desert, Coniferous forest, woodland and riparian</li>
+				<li>Isaac Behunin is credited with settling the Zion Canyon floor in 1863, and for naming it Zion</li>
+			</ul>
+		<h3>Acadia National Park</h3>
+			<ul>
+				<li>There are a total of 26 mountains in Acadia National Park</li>
+				<li>The deepest lake in the park is Jordan Pond. It is 150 feet deep</li>
+				<li>20% of the park is classified as wetlands. In each of these wetland areas at least one rare plant grows</li>
+				<li>There are 120 miles of trails for hiking in the park</li>
+			</ul>
+
 		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript">
+
 		$(document).ready(function () {
 			$("dd").addClass("invisible");
 			$("#answers").click(function(){	
 				$("dd").toggleClass("invisible");
 			});
-			});
+			
+			$("ul").each(function(){		// function created to traverse through each ul tag		
+				$(this).children().first().css("font-weight", "bold");		// "this" refers to specific ul tag that is being traversed
+ 			});
+
+		// Create jQuery code that adds the invisible class on the parent ul of any li that is clicked.
+			$("li").click(function(){						
+				$(this).parent().addClass("invisible");
+			})
+		
+
+		});
+
 
 		</script>
 	</body>
