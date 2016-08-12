@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+    <h1>Konami Code</h1>
+
+<!-- preload audio to prevent clip from play after the alert -->
+    <audio id="yeahBoi" src="/flavaFlav.mp3" preload="auto"></audio>	
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+     
+        $(document).ready(function(){ 
+        	"use strict";
+
+
+   	
+// ______________________________display keyCode___________________________   			
+        	// var keyLog = function(event){
+	        //     console.log(event.keyCode);
+	        // };
+
+	        // $(document).keyup(keyLog);
+// _________________________________________________________________________
+
+        	var konami = [38,38,40,40,37,39,37,39,66,65,13]; // created array containing keycode pattern of correct konami code 
+   			var i = 0;		// var i is set to 0 in preparation for upcoming array iteration
+   			
+
+	        $(document).keyup(function(event){			// keyup function will enable if else statement based on keystrokes
+	        	console.log(event.keyCode);				// prints numeric keycode associated with keystroke
+	        	if (event.keyCode == konami[i]){		// if the keystroke matches first index in array, continue to next index
+	        		i++;							
+	        	} else {								
+	        		i = 0;								// if keystroke does not match index, reset value to 0		
+	        	}										 
+
+	        	if (i == konami.length) {				// if keystroke pattern matches konami index, then alert and sound will display
+        			document.getElementById("yeahBoi").play();
+        			// $("#yeahBoi").play();
+	        		$("body").css("background-image", "url(/img/flava.jpg)");
+	        		$("body").css("background-size", "cover");
+	        		$("body").css("backgroun-repeat", "no-repeat");
+	        		alert("yeeeeaaaaahhhh, boooiiiiii!!!");
+	        		i = 0;								// resets value to 0 so as to allow for multiple code entries
+	        	}
+	        
+	        })
+	     
+
+        });
+
+    </script>
+</body>
+</html>
