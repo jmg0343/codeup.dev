@@ -91,7 +91,7 @@
 				var getWeather = function(event) {
 					$.ajax({											// ajax request for weather map				
 						url: "http://api.openweathermap.org/data/2.5/forecast/daily",
-						method: "GET",											// GET request as opposed to POST
+						method: "GET",										
 						data: {													// This is the data we will be sending
 							APPID: myAPIKey,										// our constant, which is the API key given
 							// q: "San Antonio, US",									// the location we wish to receive info about
@@ -147,34 +147,8 @@
 
 					$("#latitude").val(lat);
 					$("#longitude").val(lng);
+					getWeather();
 				});
-
-
-	//__________________________________________________________________________________________ 
-			// // console.logs the lat/lng of location that is clicked on
-			// 	google.maps.event.addListener(map, 'click', coordinates);
-				
-			// 	var marker;
-			// // function created to place marker on clicked position
-			// 	var placeMarker = function(position, map) {
-			// 		marker = new google.maps.Marker({
-			// 	      position: position,
-			// 	      map: map
-			// 	    });  
-			// 	    map.panTo(position);
-			// 	  };
-				 
-			// 	 var latitude;
-			// 	 var longitude;
-			// // places marker when clicked
-		 //        google.maps.event.addListener(map, 'click', function(e) {
-			// 	    placeMarker(e.latLng, map);
-			// 	    latitude = this.center.lat();
-			// 	    longitude = this.center.lng();
-			// 	    $("#latitude").val(latitude);
-			// 	    $("#longitude").val(longitude);
-			// 	  });
-
 
 
 			})();
