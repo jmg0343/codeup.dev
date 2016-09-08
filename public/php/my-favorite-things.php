@@ -33,6 +33,11 @@
 			width: 800px;
 			margin: auto;
 		}
+
+		#rolyPoly {
+			margin-top: 200px;
+			margin-left: 1000px;
+		}
 	</style>
 
 </head>
@@ -40,12 +45,14 @@
 
 	<table id="favoriteTable">
 		<tr>
-			<th>My Favorite Things</th>
+			<th>Dopest Things In The World</th>
 		</tr>	
 		<?php foreach ($favoriteThings as $favoriteThing): ?>
         	<tr><td><?= $favoriteThing; ?></td></tr>
     	<?php endforeach; ?>
 	</table>
+
+	<div id="rolyPoly">Powered by Roly Poly</div>
 
 </body>
 </html>

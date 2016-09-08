@@ -1,7 +1,5 @@
 <?php 
-	$adjectives = ["dope", "feral", "fake", "aweful", "rabid", "slow", "terrible", "witty", "hilarious", "happy"];
-	$nouns = ["person", "mime", "rapper", "mixtape", "phone", "goat", "monkeys", "monster", "fox", "music"];
-	
+// funtion randomizes elements within 2 arrays and returns a random combination
 	function randomElement($array1, $array2) {
 		$randomAdj = $array1[mt_rand(0, count($array1) - 1)];
 		$randomNoun = $array2[mt_rand(0, count($array2) - 1)];
@@ -9,7 +7,24 @@
 		return "$randomAdj $randomNoun";
 	}
 
-	$serverName = randomElement($adjectives, $nouns);
+// protects variables by wrapping them in a function that acts as an iffe
+	function pageController() {
+// two arrays created that will later be used in the previoiusly defined function
+		$adjectives = ["dope", "feral", "fake", "aweful", "rabid", "slow", "terrible", "witty", "hilarious", "happy"];
+		$nouns = ["person", "mime", "rapper", "mixtape", "phone", "goat", "monkeys", "monster", "fox", "music"];
+		
+// variable created that calls randomElement function
+		$serverName = randomElement($adjectives, $nouns);
+// empty array created that will contain the output of the randomElement function
+		$data = [];
+// key named "dataExtracted" is created and placed inside empty $data array
+// "dataExtracted" key will contain $serverName(returned output of randomElement function) as value
+		$data["dataExtracted"] = $serverName;
+// returns $data, which is now an array containing the desired output
+		return $data;
+	}
+// extract takes array keys returned from the pageController and converts the into variables that can be called in HTML
+	extract(pageController());
 ?>
 
 
@@ -40,7 +55,7 @@
 	</head>
 	<body>
 		<div id="random">
-			<h1><?php echo $serverName; ?></h1>
+			<h1><?= $dataExtracted; ?></h1>
 		</div>
 	</body>
 </html>
