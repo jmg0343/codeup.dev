@@ -1,9 +1,21 @@
 <?php
+
+function pageController(){
+// empty array created to store array that will be extracted
+	$data = [];
 // variable created to set counter
 // if button is clicked, counter moves up or down, else it is set to 0
-	$counter = isset($_GET["counter"]) ? $_GET["counter"] : 0;
-// variable created that points to URL 
-	$url = "/php/counter.php";
+	$data["counter"] = isset($_GET["counter"]) ? $_GET["counter"] : 0;
+// key created that points to URL 
+	$data["url"] = "/php/counter.php";
+// key created to increment
+	$data["up"] = $data["counter"] + 1;
+// key created to decrement
+	$data["down"] = $data["counter"] - 1;
+	return $data;
+}
+// extracts keys within data array and converts them to variables
+extract(pageController());
 
 ?>
 
@@ -44,36 +56,19 @@
 <body>
 	<div class="container">
 
-		<!-- UP button created that will increment counter and place new count in query
-			 references $url within PHP tags
-			 concatenates $url with ?(this starts the query), counter(this creates a key called counter), =(the key must equal a value) 
-			 inside PHP tags, $counter+1 increments the counter variable(this is the value that is now assigned to the counter key we just created)
 
-			 This literally writes in our entire URL and query string -->
-		<button><a href="<?= $url; ?>?counter=<?= ($counter + 1); ?>">UP</a></button>
+		<button><a href="<?= $url; ?>?counter=<?= $up; ?>">UP</a></button>
 		<br>
 		<br>
-		<!-- The counter div just keeps track of where we are in the count by referencing the $counter variable -->
 		<div>COUNTER: <?= $counter ?></div>
 		<br>
-		<!-- This is the same step that we did with the UP button, except now we decrement -->
-		<button><a href="<?= $url; ?>?counter=<?= ($counter - 1); ?>">DOWN</a></button>
+		<button><a href="<?= $url; ?>?counter=<?= $down; ?>">DOWN</a></button>
 	</div>
 	<footer>
 
 		<!-- POWERED BY THE ONE AND ONLY ROLY POLY -->
-		<div id="rolyPoly">Powered by Roley Poley</div>
+		<div id="rolyPoly">Powered by Roly Poly</div>
 	</footer>
 
 </body>
 </html>
-
-
-
-<!-- 
-	- In your HTML, you will need two links. One that says up and another that says down.
-	- Add a heading that shows a number representing the current counter value. This value will start at zero. When up is clicked, the counter value should increase; when down is clicked, it should decrease.
-	- The up and down links will send GET requests back to the counter page itself.
-	- Create a function that will access the $_GET superglobal variable. It should determine what the new counter value is and return it.
-	- Use the extract() function to change the return value of the pageController() into variables for your HTML. 
--->

@@ -11,7 +11,7 @@
 	function pageController() {
 // two arrays created that will later be used in the previoiusly defined function
 		$adjectives = ["dope", "feral", "fake", "aweful", "rabid", "slow", "terrible", "witty", "hilarious", "happy"];
-		$nouns = ["person", "mime", "rapper", "mixtape", "phone", "goat", "monkeys", "monster", "fox", "music"];
+		$nouns = ["person", "mime", "rapper", "mixtape", "dude", "goat", "monkeys", "monster", "fox", "music"];
 		
 // variable created that calls randomElement function
 		$serverName = randomElement($adjectives, $nouns);
@@ -31,7 +31,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Server-Name-Generator</title>
+		<title>Server-Name Generator</title>
 		<style type="text/css">
 			body {
 				background: black;
@@ -51,12 +51,21 @@
 				margin-top: 200px;
 			}
 
+			#rolyPoly {
+				margin-top: 25px;
+				margin-left: 1000px;
+				color: blue;
+			}
+
 		</style>
 	</head>
 	<body>
 		<div id="random">
 			<h1><?= $dataExtracted; ?></h1>
 		</div>
+
+			<div id="rolyPoly">Powered by Roly Poly</div>
+
 	</body>
 </html>
 

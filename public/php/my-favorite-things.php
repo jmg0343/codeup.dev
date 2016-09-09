@@ -37,6 +37,7 @@
 		#rolyPoly {
 			margin-top: 200px;
 			margin-left: 1000px;
+			color: blue;
 		}
 	</style>
 
