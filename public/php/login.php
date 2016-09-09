@@ -1,0 +1,61 @@
+<?php
+
+function loginCheck ($username, $password) {
+	if(!empty($_POST)) {
+		if($username == "guest" && $password == "password") {
+			header("Location: authorized.php");
+			die();
+		} else {
+			echo "<script>alert('Chiggity Check YoSelf Before You Wreck YoSelf');</script>";
+		}
+	} 
+}
+	
+// function loginCheck($username, $password) {
+// 	$redirectTo = "authorized.php";							// variable created that points to authorization page
+// 	if($username == "guest" && $password == "password") {	// if username and password match....
+// 		header("Location: $redirectTo");					// send to url specified in $redirect variable
+//		die();												// ALWAYS DIE AFTER HEADER
+// 	} elseif ($username == " " || $password == " ") {		// if username or password is empty, do nothing
+// 	} else {
+// 		echo "<script>alert('Chiggity Check YoSelf Before You Wreck YoSelf');</script>";	// if username or password is incorrect, inserts js alert
+// 	}
+// }
+function pageController() {
+	$data =[];
+	$data["username"] = isset($_POST['username']) ? $_POST["username"] : " ";		// if username is set, get it's value, otherwise, empty string
+	$data["password"] = isset($_POST['password']) ? $_POST["password"] : " "; 		// if password is set, get it's value, otherwise, empty string
+	$data["checkLogin"] = loginCheck($data["username"], $data["password"]);			// call the loginCheck function
+	return $data;
+}
+extract(pageController());
+?>
+
+<!DOCTYPE>
+<html>
+<head>
+	<title>LOGIN</title>
+	<style type="text/css">
+		.container {
+			height: 200px;
+			width: 200px;
+			margin-top: 300px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+		
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<form method="POST">			
+			Username:<br>
+			<input type="text" name="username"><br>
+			Password:<br>
+			<input type="password" name="password"><br>
+			<input type="submit">
+	</div>
+
+</body>
+</html>
