@@ -1,15 +1,25 @@
 <?php
+session_start();
 
 function loginCheck ($username, $password) {
 	if(!empty($_POST)) {
 		if($username == "guest" && $password == "password") {
-			header("Location: authorized.php");
-			die();
+			$_SESSION["logged_in_user"] = $username;
+			$_SESSION["user_is_logged_in"] = true;
+			// header("Location: authorized.php");
+			// die();
 		} else {
 			echo "<script>alert('Chiggity Check YoSelf Before You Wreck YoSelf');</script>";
 		}
 	} 
+	if(isset($_SESSION["user_is_logged_in"]) && $_SESSION["user_is_logged_in"] == true) {
+		header("Location: authorized.php");
+		die();
+	}
 }
+
+
+
 	
 // function loginCheck($username, $password) {
 // 	$redirectTo = "authorized.php";							// variable created that points to authorization page
