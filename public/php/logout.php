@@ -1,4 +1,5 @@
 <?php
+    session_start();
 
 	function clearSession()
 {
@@ -15,7 +16,6 @@
     // if we want to store any new data in $_SESSION we must start a new one
 
 }
-    session_start();
     clearSession();
 ?>
 

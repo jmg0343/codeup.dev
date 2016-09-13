@@ -2,12 +2,11 @@
 session_start();
 
 function loginCheck ($username, $password) {
-	if(!empty($_POST)) {
+	if(!empty($_POST)) {												// POST will only be truly empty when page is first loaded and no POST request sent
 		if($username == "guest" && $password == "password") {
+			// $_SESSION["username"] = $_POST["username"];
 			$_SESSION["logged_in_user"] = $username;
 			$_SESSION["user_is_logged_in"] = true;
-			// header("Location: authorized.php");
-			// die();
 		} else {
 			echo "<script>alert('Chiggity Check YoSelf Before You Wreck YoSelf');</script>";
 		}
