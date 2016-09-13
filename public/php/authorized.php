@@ -1,4 +1,5 @@
 <?php
+	require_once "functions.php";
 	session_start();
 // if $_SESSION is NOT set AND user is not logged in, redirect user to login page
 	if(!isset($_SESSION["user_is_logged_in"]) && $_SESSION["user_is_logged_in"] == false) {

@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once "functions.php";
 
 function loginCheck ($username, $password) {
 	if(!empty($_POST)) {												// POST will only be truly empty when page is first loaded and no POST request sent
@@ -32,8 +33,10 @@ function loginCheck ($username, $password) {
 // }
 function pageController() {
 	$data =[];
-	$data["username"] = isset($_POST['username']) ? $_POST["username"] : " ";		// if username is set, get it's value, otherwise, empty string
-	$data["password"] = isset($_POST['password']) ? $_POST["password"] : " "; 		// if password is set, get it's value, otherwise, empty string
+	// $data["username"] = isset($_POST['username']) ? $_POST["username"] : " ";		// if username is set, get it's value, otherwise, empty string
+	$data["username"] = inputGet("username");
+	// $data["password"] = isset($_POST['password']) ? $_POST["password"] : " "; 		// if password is set, get it's value, otherwise, empty string
+	$data["password"] = inputGet("password");
 	$data["checkLogin"] = loginCheck($data["username"], $data["password"]);			// call the loginCheck function
 	return $data;
 }
