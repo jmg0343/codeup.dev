@@ -1,9 +1,13 @@
 <?php
 	require_once "functions.php";
+	require_once "../../input.php";
+
 	function pageController() {
 		$count = [];
 		// $count["count"] = (isset($_GET["count"])) ? $_GET["count"] : 0;
-		$count["count"] = inputGet("count");
+		// $count["count"] = inputGet("count");
+		$count["count"] = Input::get("count") . PHP_EOL;
+
 
 		return $count;
 	}
