@@ -1,16 +1,11 @@
 <?php
 session_start();
-require_once "functions.php";
+require_once "../../Auth.php";
+require_once "../../Input.php";
 
 function loginCheck ($username, $password) {
 	if(!empty($_POST)) {												// POST will only be truly empty when page is first loaded and no POST request sent
-		if($username == "guest" && $password == "password") {
-			// $_SESSION["username"] = $_POST["username"];
-			$_SESSION["logged_in_user"] = $username;
-			$_SESSION["user_is_logged_in"] = true;
-		} else {
-			echo "<script>alert('Chiggity Check YoSelf Before You Wreck YoSelf');</script>";
-		}
+		
 	} 
 	if(isset($_SESSION["user_is_logged_in"]) && $_SESSION["user_is_logged_in"] == true) {
 		header("Location: authorized.php");
@@ -34,9 +29,10 @@ function loginCheck ($username, $password) {
 function pageController() {
 	$data =[];
 	// $data["username"] = isset($_POST['username']) ? $_POST["username"] : " ";		// if username is set, get it's value, otherwise, empty string
-	$data["username"] = inputGet("username");
+	$data["username"] = Input::get("username");
 	// $data["password"] = isset($_POST['password']) ? $_POST["password"] : " "; 		// if password is set, get it's value, otherwise, empty string
-	$data["password"] = inputGet("password");
+	$data["password"] = Input::get("password");
+	$data['login'] = Auth::attempt($data['username'], $data['password']);
 	$data["checkLogin"] = loginCheck($data["username"], $data["password"]);			// call the loginCheck function
 	return $data;
 }
