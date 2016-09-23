@@ -3,6 +3,10 @@
     session_start();
 
 
+// Auth::logout();
+// Auth::redirect("/login.php");
+
+
 	function clearSession()
     {
         // clear $_SESSION array
