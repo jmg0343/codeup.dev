@@ -16,6 +16,7 @@
 		    	location VARCHAR(50) NOT NULL,
 		    	date_established DATE NOT NULL,
 		    	area_in_acres DOUBLE NOT NULL,
+		    	description TEXT,
 		   		PRIMARY KEY (id)
 			)";
 
