@@ -1,12 +1,20 @@
 
 <?php 
 class Rectangle { 
-    public $height = 'aMemberVar Member Variable'; 
-    public $width = 'aMemberFunc'; 
+    private $height; 
+    private $width; 
     
     public function __construct($height, $width) {
-    	$this->height = $height;
-    	$this->width = $width;
+    	$this->setHeight($height);
+    	$this->setWidth($width);
+    }
+
+    protected function setHeight($height) {
+    	$this->height = trim($height);
+    }
+
+    protected function setWidth($width) {
+    	$this->width = trim($width);
     }
 
     public function area() {
@@ -16,13 +24,16 @@ class Rectangle {
     public function perimeter() {
 		return ($this->height * 2) + ($this->width * 2);
 	}
+
+	public function getHeight() {
+		return $this->height;
+	}
+
+	public function getWidth() {
+		return $this->width;
+	}
 } 
 
- 
-?>
 
 
-
-
-
-<!-- Add a perimeter() method to your Rectangle class, and an area() method to your Square class. Neither of these should call a parent. Which method is overriding? Which one is a base method? -->
+  

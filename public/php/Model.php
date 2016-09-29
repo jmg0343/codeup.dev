@@ -18,5 +18,5 @@ class Model {
 
 
 $attribute = new Model();
-$attribute->name = "Joey";
-echo $attribute->name;
+$attribute->anyProperty=['joey', 'is', 'awesome'];
+var_dump($attribute->anyProperty);
