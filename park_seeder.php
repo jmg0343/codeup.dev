@@ -74,11 +74,12 @@
 	['name' => 'Zion','location' => 'Utah','date_established' => '1919-11-19','area_in_acres' => '146597.60','description' => "Located at the junction of the Colorado Plateau, Great Basin, and Mojave Desert, this geological wonder has colorful sandstone canyons, mountainous mesas, and countless rock towers. Natural arches and exposed plateau formations compose a large wilderness roughly divided into four ecosystems: desert, riparian, woodland, and coniferous forest.",],
 ];
 
-
-foreach ($parks as $park) {
+	
+	$stmt = $dbc->prepare($query);
 	$query = "INSERT INTO national_parks (name, location, date_established, area_in_acres, description) 
 			VALUES (:name, :location, :date_established, :area_in_acres, :description)";
-	$stmt = $dbc->prepare($query);
+
+foreach ($parks as $park) {
 
 	$stmt->bindValue(':name', $park['name'], PDO::PARAM_STR);
 	$stmt->bindValue(':location', $park['location'], PDO::PARAM_STR);
