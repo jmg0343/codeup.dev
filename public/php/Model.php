@@ -28,4 +28,4 @@ class Model {
 // $attribute->anyProperty=['joey', 'is', 'awesome'];
 // var_dump($attribute->anyProperty);
 
-echo User::getTableName() . PHP_EOL;
+var_dump(User::getTableName() . PHP_EOL);

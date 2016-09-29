@@ -5,7 +5,8 @@ define("DB_NAME", "parks_db");
 define("DB_USER", "parks_user");
 define("DB_PASS", "quackerjack");
 
-require_once "../../db_connect.php";
+require_once __DIR__ . "/../../db_connect.php";
+require_once __DIR__ . "/../../Input.php";
 
 function insertPark($dbc)
 {
@@ -13,12 +14,12 @@ function insertPark($dbc)
 
 	$stmt = $dbc->prepare($query);
 
-	$stmt->execute(array($_GET['name'], $_GET['location'], $_GET['date_established'], $_GET['area_in_acres'], $_GET['description']));
+	$stmt->execute(array(Input::getString('name'), Input::getString('location'), Input::getString('date_established'), Input::getNumber('area_in_acres'), Input::getString('description')));
 };
 
 function getTable($dbc){
 		// ternary statement reads GET request				
-	$offset = (isset($_GET['page'])) ? (int)$_GET['page'] : 0;
+	$offset = (Input::has('page')) ? (int)$_GET['page'] : 0;
 	// GET request NOT empty? if true, set it to offset => value. If false, set it to 0
 	$limit = 4;
 
@@ -40,11 +41,16 @@ function getTable($dbc){
 	];
 }
 
-function pageController($dbc){		
-	if(isset($_GET['name'])){
+function pageController($dbc){	
+
+	if (Input::has('name') && Input::has('location') && Input::has('date_established') && Input::has('area_in_acres') && Input::has('description')) {
 		insertPark($dbc);
-	}
+	} 	
 	return getTable($dbc);
+	// if(isset($_GET['name'])){
+	// 	insertPark($dbc);
+	// }
+	// return getTable($dbc);
 };
 
 extract(pageController($dbc));	// extracts pageController and passes $dbc from db_connect.php into it
