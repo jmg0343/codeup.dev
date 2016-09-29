@@ -31,6 +31,36 @@ class Input
         }
     }
 
+    public static function getString($key)
+    {
+        if (! self::has($key)) {
+            throw new Exception("Request does not contain key: '$key'");
+        }
+
+        $value = self::get($key);
+
+        if (gettype($value) != 'string') {
+            throw new Exception("Value at index '$key' is not a string"); 
+        }
+
+        return $value;
+    }
+
+    public static function getNumber($key)
+    {
+        if (! self::has($key)) {
+            throw new Exception("Request does not contain key: '$key'");
+        }
+
+        $value = self::get($key);
+
+        if(! is_numeric($value)) {
+            throw new Exception("Value '$value' is not a number");
+        }
+
+        return $value;
+    }
+
     ///////////////////////////////////////////////////////////////////////////
     //                      DO NOT EDIT ANYTHING BELOW!!                     //
     // The Input class should not ever be instantiated, so we prevent the    //
@@ -39,3 +69,7 @@ class Input
     ///////////////////////////////////////////////////////////////////////////
     private function __construct() {}
 }
+
+
+
+
