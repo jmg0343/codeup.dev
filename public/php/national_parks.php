@@ -10,11 +10,43 @@ require_once __DIR__ . "/../../Input.php";
 
 function insertPark($dbc)
 {
-	$query = 'INSERT INTO national_parks (name, location, date_established, area_in_acres, description) VALUES (?, ?, ?, ?, ?)';
+	$query = 'INSERT INTO national_parks (name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)';
 
 	$stmt = $dbc->prepare($query);
 
-	$stmt->execute(array(Input::getString('name'), Input::getString('location'), Input::getString('date_established'), Input::getNumber('area_in_acres'), Input::getString('description')));
+	// $stmt->execute(array(Input::getString('name'), Input::getString('location'), Input::getString('date_established'), Input::getNumber('area_in_acres'), Input::getString('description')));
+	try {
+		$stmt->bindValue(':name', Input::getString('name'), PDO::PARAM_STR);
+	} catch (Exception $e){
+		Input::$errors[] = $e->getMessage();
+	}
+
+	try {
+		$stmt->bindValue(':location', Input::getString('location'), PDO::PARAM_STR);
+	} catch (Exception $e){
+		Input::$errors[] = $e->getMessage();
+	}
+
+	try {
+		$stmt->bindValue(':date_established', Input::getString('date_established'), PDO::PARAM_STR);
+	} catch (Exception $e){
+		Input::$errors[] = $e->getMessage();
+	}
+
+	try {
+		$stmt->bindValue(':area_in_acres', Input::getNumber('area_in_acres'), PDO::PARAM_INT);
+	} catch (Exception $e){
+		Input::$errors[] = $e->getMessage();
+	}
+
+	try {
+		$stmt->bindValue(':description', Input::getString('description'), PDO::PARAM_STR);
+	} catch (Exception $e){
+		Input::$errors[] = $e->getMessage();
+	}
+
+	$stmt->execute();
+
 };
 
 function getTable($dbc){
@@ -47,10 +79,6 @@ function pageController($dbc){
 		insertPark($dbc);
 	} 	
 	return getTable($dbc);
-	// if(isset($_GET['name'])){
-	// 	insertPark($dbc);
-	// }
-	// return getTable($dbc);
 };
 
 extract(pageController($dbc));	// extracts pageController and passes $dbc from db_connect.php into it
@@ -97,6 +125,11 @@ extract(pageController($dbc));	// extracts pageController and passes $dbc from d
 			</a> 	
 		<?php endfor; ?>
 
+		<?php foreach (Input::$errors as $error) {?>
+			<h2><?php echo $error; ?></h2>
+		<?php } ?>
+
+
 		<form method="GET">
 			Park Name:<br>
 			<input id="name" pattern="([a-zA-Z])\w+" type="text" name="name" required><br>
@@ -105,7 +138,7 @@ extract(pageController($dbc));	// extracts pageController and passes $dbc from d
 			Date Established:<br>
 			<input id="date_established" type="date" name="date_established" required><br>
 			Area In Acres:<br>
-			<input id="area_in_acres" type="number" name="area_in_acres" required><br>
+			<input id="area_in_acres" type="text" name="area_in_acres" required><br>
 			Description:<br>
 			<input id="description" type="text" name="description" required><br>
 			<input type="submit" name="submit">

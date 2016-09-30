@@ -2,6 +2,7 @@
 
 class Input
 {
+    public static $errors = [];
     /**
      * Check if a given value was passed in the request
      *
@@ -30,6 +31,96 @@ class Input
             return null;
         }
     }
+
+
+// -----------------------------TRY/CATCH------------------------------
+    // $errors = [];
+    // try {
+    //     throw new Exception("Value at index '$key' is not a string");   
+    // } catch (Exception $e) {
+    //     $errors[] = $e->getMessage();
+    // }
+
+    // try {
+    //     throw new Exception("Value at index '$key' is not a number");   
+    // } catch (Exception $e) {
+    //     $errors[] = $e->getMessage();
+    // }
+//     try {
+//         if (! self::has($key)) {
+//             throw new Exception("Request does not contain key: '$key'");
+//         }
+
+//         $value = self::get($key);
+
+//     } catch (Exception $e) {
+//         $errors[] = $e->getMessage();
+//     }
+
+//     try {
+//         if (gettype($value) != 'string') {
+//             throw new Exception("Value at index '$key' is not a string"); 
+//         } 
+
+//         return $value;
+
+//     } catch (Exception $e) {
+//         $errors[] = $e->getMessage();
+//     }
+// // ---------------------------------------------------------------------
+    // public static function getString($key)
+    // {
+    //     try {
+    //         if (! self::has($key)) {
+    //             throw new Exception("Request does not contain key: '$key'");
+    //         }
+
+    //     $value = self::get($key);
+
+    //     } catch (Exception $e) {
+    //         $errors[] = $e->getMessage();
+    //     }
+
+    //     try {
+    //         if (gettype($value) != 'string') {
+    //             throw new Exception("Value at index '$key' is not a string"); 
+    //         } 
+
+
+    //     } catch (Exception $e) {
+    //         $errors[] = $e->getMessage();
+    //     } 
+    //     return $value;
+    // } 
+
+    // public static function getNumber($key)
+    // {
+    //     try {
+    //         if (! self::has($key)) {
+    //             throw new Exception("Request does not contain key: '$key'");
+    //         }
+
+    //     $value = self::get($key);
+        
+    //     } catch (Exception $e) {
+    //         $errors[] = $e->getMessage();
+    //     }
+
+    //     try {
+    //         if (! is_numeric($value)) {
+    //             throw new Exception("Value at index '$key' is not a number"); 
+    //         } 
+
+
+    //     } catch (Exception $e) {
+    //         $errors[] = $e->getMessage();
+    //     }
+    //     return $value;
+    // }   
+
+// ---------------------------------------------------------------------
+
+  
 
     public static function getString($key)
     {
