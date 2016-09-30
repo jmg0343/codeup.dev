@@ -16,36 +16,39 @@ function insertPark($dbc)
 
 	// $stmt->execute(array(Input::getString('name'), Input::getString('location'), Input::getString('date_established'), Input::getNumber('area_in_acres'), Input::getString('description')));
 	try {
-		$stmt->bindValue(':name', Input::getString('name'), PDO::PARAM_STR);
+		$stmt->bindValue(':name', Input::getString('name', 2, 50), PDO::PARAM_STR);
 	} catch (Exception $e){
 		Input::$errors[] = $e->getMessage();
 	}
 
 	try {
-		$stmt->bindValue(':location', Input::getString('location'), PDO::PARAM_STR);
+		$stmt->bindValue(':location', Input::getString('location', 2, 50), PDO::PARAM_STR);
 	} catch (Exception $e){
 		Input::$errors[] = $e->getMessage();
 	}
 
 	try {
-		$stmt->bindValue(':date_established', Input::getString('date_established'), PDO::PARAM_STR);
+		$stmt->bindValue(':date_established', Input::getString('date_established', 10, 10), PDO::PARAM_STR);
 	} catch (Exception $e){
 		Input::$errors[] = $e->getMessage();
 	}
 
 	try {
-		$stmt->bindValue(':area_in_acres', Input::getNumber('area_in_acres'), PDO::PARAM_INT);
+		$stmt->bindValue(':area_in_acres', Input::getNumber('area_in_acres', 10, 1000000000), PDO::PARAM_INT);
 	} catch (Exception $e){
 		Input::$errors[] = $e->getMessage();
 	}
 
 	try {
-		$stmt->bindValue(':description', Input::getString('description'), PDO::PARAM_STR);
+		$stmt->bindValue(':description', Input::getString('description', 1, 10000000), PDO::PARAM_STR);
 	} catch (Exception $e){
 		Input::$errors[] = $e->getMessage();
 	}
 
-	$stmt->execute();
+	if(count(Input::$errors) == 0) {
+		$stmt->execute();
+	}
+
 
 };
 
