@@ -18,10 +18,19 @@ class User extends Model
         $stmt->bindValue(':email', $this->attributes['email'], PDO::PARAM_STR);
         $stmt->bindValue(':password', $this->attributes['password'], PDO::PARAM_STR);
         $stmt->execute();
+        // below is how to loop through them and bind through iteration
+
+        // foreach ($this->attributes as $column => $value) {
+        //     $stmt->bindValue(':' . $column, $value, PDO::PARAM_STR);
+        // }
+
+
         // @TODO: After the insert, add the id back to the attributes array
         //        so the object properly represents a DB record
         $id = self::$dbc->lastInsertId();
         $this->attributes['id'] = $id;
+            // OR
+        // $this->attributes['id'] = self::$dbc->lastInsertId();
     }
 
     /** Update existing entry in the database */

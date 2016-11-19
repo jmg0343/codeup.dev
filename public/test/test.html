@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TEST</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="description" content="Demo project with jQuery">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">	
+		<style type="text/css">
+			body {
+				overflow: hidden;
+			}
+			.border {
+				background-color: black;
+				position: fixed;
+				padding: 1.2em;
+			}
+			.border.top {
+				top: 0;
+			}
+			.border.left {
+				left: 0;
+			}
+			.border.right {
+				right: 0;
+			}
+			.border.bottom {
+				bottom: 0;
+			}
+			.border.vertical {
+			    top: 0;
+			    bottom: 0;
+			    width: 2rem;
+			    height: 100%;
+			}
+			.border.horizontal {
+			    left: 0;
+			    right: 0;
+			    width: 100%;
+			    height: 2rem;
+			}
+			.topLine {
+				height: 25rem; 
+				width: 0rem; 
+				position: relative; 
+				border-left: 1px solid black;
+				margin: auto;
+				margin-top: 8rem;
+				margin-bottom: 5rem;
+			}
+			.centerLine {
+				height: 0px;
+				width: 120rem;
+				position: relative;
+				border-top: 1px solid #bfb7b7;
+				margin: auto;
+				margin-top: 10px;
+			}
+			.bottomLine {
+				height: 25rem; 
+				width: 0rem; 
+				position: relative; 
+				border-left: 1px solid black;
+				margin: auto;
+				margin-top: 5rem;
+				margin-bottom: 20rem;
+			}
+			h2 {
+				margin-right: 15px;
+			}
+
+			.test {
+				position: relative;
+				left: 20px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="border top horizontal"></div>
+			<div class="border right vertical"></div>
+			<div class="border bottom horizontal"></div>
+			<div class="border left vertical"></div>
+		
+			<div class="topLine line"></div>
+
+			<h2 class="slendabilt" hidden style="text-align: center; margin-top: 50px;">SlendaBilt</h2>
+
+			<div class="centerLine line"></div>
+
+			<h2 class="test" hidden style="text-align: center; margin-top: 10px;">Test</h2>	
+
+			<div class="bottomLine line"></div>
+		</div>
+	</body>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="/test/test.js"></script>
+</html>
